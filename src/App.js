@@ -7,6 +7,9 @@ import Contact from "./Contact/Contact";
 import Blogs from "./Blogs/Blogs";
 import BlogsDetails from "./Blogs/BlogsDetails";
 import NotFound from "./NotFound/NotFound";
+import Courses from "./Courses/Courses";
+import Login from "./Login/Login";
+import PrivateRoute from "./PrivateRoute/PrivateRoute";
 
 const App = () => {
   return (
@@ -22,7 +25,24 @@ const App = () => {
               <Route path="/blogs" element={<Blogs />} />
               <Route path="/blogs/:blogId" element={<BlogsDetails />} />
               <Route path="/about" element={<About />} />
-              <Route path="/contact" element={<Contact />} />
+              <Route
+                path="/courses"
+                element={
+                  <PrivateRoute>
+                    <Courses />
+                  </PrivateRoute>
+                }
+              />
+              <Route
+                path="/contact"
+                element={
+                  <PrivateRoute>
+                    <Contact />
+                  </PrivateRoute>
+                }
+              />
+              {/* <Route path="/contact" element={<Contact />} /> */}
+              <Route path="/login" element={<Login />} />
               <Route path="/*" element={<NotFound />} />
             </Routes>
           </div>

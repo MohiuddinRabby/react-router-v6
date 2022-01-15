@@ -37,6 +37,15 @@ const Nav = () => {
         <li className="nav-item">
           <NavLink
             className={(active) => (active.isActive ? "text-danger" : "")}
+            to="/courses"
+          >
+            Courses
+          </NavLink>
+        </li>
+        <hr />
+        <li className="nav-item">
+          <NavLink
+            className={(active) => (active.isActive ? "text-danger" : "")}
             to="/contact"
           >
             Contact

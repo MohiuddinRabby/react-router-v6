@@ -1,11 +1,11 @@
 import React from "react";
 
-const Contact = () => {
+const Courses = () => {
   return (
     <div className="mt-5 bg-light p-2">
-      <h1>Conatact page</h1>
+      <h1>All Courses</h1>
     </div>
   );
 };
 
-export default Contact;
+export default Courses;
