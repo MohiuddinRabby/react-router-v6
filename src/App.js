@@ -24,7 +24,8 @@ const App = () => {
               <Route path="/" element={<Home />} />
               <Route path="/blogs" element={<Blogs />} />
               <Route path="/blogs/:blogId" element={<BlogsDetails />} />
-              <Route path="/about" element={<About />} />
+              <Route path="/about" element={<About />} />{" "}
+              <Route path="/contact" element={<Contact />} />
               {/* way-1 to declare private route */}
               {/* <Route
                 path="/courses"
@@ -35,12 +36,10 @@ const App = () => {
                 }
               /> */}
               {/* way-2 to declare private route */}
-
               <Route path="/login" element={<Login />} />
               <Route path="/*" element={<NotFound />} />
               <Route path="/*" element={<PrivateOutlet />}>
                 <Route path="courses" element={<Courses />} />
-                <Route path="contact" element={<Contact />} />
               </Route>
             </Routes>
           </div>
