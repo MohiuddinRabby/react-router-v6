@@ -9,7 +9,7 @@ import BlogsDetails from "./Blogs/BlogsDetails";
 import NotFound from "./NotFound/NotFound";
 import Courses from "./Courses/Courses";
 import Login from "./Login/Login";
-import PrivateRoute from "./PrivateRoute/PrivateRoute";
+import PrivateOutlet from "./PrivateOutlet/PrivateOutlet";
 
 const App = () => {
   return (
@@ -25,25 +25,23 @@ const App = () => {
               <Route path="/blogs" element={<Blogs />} />
               <Route path="/blogs/:blogId" element={<BlogsDetails />} />
               <Route path="/about" element={<About />} />
-              <Route
+              {/* way-1 to declare private route */}
+              {/* <Route
                 path="/courses"
                 element={
                   <PrivateRoute>
                     <Courses />
                   </PrivateRoute>
                 }
-              />
-              <Route
-                path="/contact"
-                element={
-                  <PrivateRoute>
-                    <Contact />
-                  </PrivateRoute>
-                }
-              />
-              {/* <Route path="/contact" element={<Contact />} /> */}
+              /> */}
+              {/* way-2 to declare private route */}
+
               <Route path="/login" element={<Login />} />
               <Route path="/*" element={<NotFound />} />
+              <Route path="/*" element={<PrivateOutlet />}>
+                <Route path="courses" element={<Courses />} />
+                <Route path="contact" element={<Contact />} />
+              </Route>
             </Routes>
           </div>
         </div>
